@@ -1,2 +1,3 @@
 __pycache__
 .env
+chat_nvd_fastapi_key.pem
