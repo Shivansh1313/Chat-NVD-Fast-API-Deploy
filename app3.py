@@ -169,22 +169,22 @@ chatbot_manager = ChatbotManager(file_paths, api_key)
 app = FastAPI()
 
 # Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # React app origin (frontend URL)
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods (POST, GET, etc.)
-    allow_headers=["*"],  # Allow all headers
-)
-##############################################################################################################
-# # Add CORS middleware to allow cross-origin requests
 # app.add_middleware(
 #     CORSMiddleware,
-#     allow_origins=["*"],  # Allow all origins (for testing, but specify domains in production)
+#     allow_origins=["http://localhost:5173"],  # React app origin (frontend URL)
 #     allow_credentials=True,
-#     allow_methods=["*"],  # Allow all HTTP methods
+#     allow_methods=["*"],  # Allow all methods (POST, GET, etc.)
 #     allow_headers=["*"],  # Allow all headers
 # )
+##############################################################################################################
+# # Add CORS middleware to allow cross-origin requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins (for testing, but specify domains in production)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
 ##############################################################################################################
 # app.add_middleware(
 #     CORSMiddleware,
